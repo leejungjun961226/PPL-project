@@ -1,0 +1,52 @@
+Team_Project/PPL/
+전체 사용자 정의 함수
+
+2020 06 14 기준
+
+파일명은 알파벳 오름차순
+┌────┐
+● : file
+○ : class
+ -  : function
+≫ : return
+ex): 예시
+└────┘
+
+----------------
+● API_CLASS.py
+- convert_strtime(str_time)
+≫str형태의 날짜(%Y-%m-%d 형식에 맞추어)를 입력받아
+datetime형태로 전환
+
+- timeminus(date, datys)
+≫date에서 days만큼 더함 ( 음수면 빠짐 )
+
+○ class NaverApi() : 대부분 날짜관련 함수들을 이용한 API처리
+- __init__(self,searchword='기본',startdate=minusdate,enddate=today)
+ex)
+na = NaverApi('달고나','2020-03-05','2020-05-05')
+na.to_excel('네이버트렌드검색량.xlsx')
+
+- set_startdate(self,startdate)
+- set_enddate(self,enddate)
+- search(self,searchword)
+- get_data(self)
+- get_keyword(self)
+- get_missingdate(self)
+- get_period(self)
+- get_rate(self)
+- to_dataframe(self)
+- to_excel(self,filepath)
+- to_csv(self,filepath)
+
+● googletrend.py
+- table_sub(df, sub)
+≫데이터프레임의 마지막에 구독자수를 추가해줌
+● googletrend.py
+- googletrend(keywords, startdate, enddate)
+구글트렌드를 진행.
+● ppl_google_main.py
+- convert_strtime(str_time)
+- timeminus(date, days=30)
+● ppl_naver_main.py
+- ○ class NaverApi() 사용 
